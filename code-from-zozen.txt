@@ -1,0 +1,38 @@
+<div className="absolute w-screen md:w-[580px] left-1 top-20 md:left-[20%] lg:left-[30%]   z-50">
+        {searchInput && (
+          <div className="z-50 flex flex-col p-5 mt-5 bg-white shadow-md md:col-span-4 w-max rounded-xl">
+            <DateRangePicker
+              ranges={[selectionRange]}
+              minDate={new Date()}
+              rangeColors={["#FD5B61"]}
+              onChange={handleSelect}
+            />
+            <div className="flex w-screen md:w-[580px] items-center border-b mb-4 top-auto right-auto bottom-auto left-auto bg-white">
+              <h2 className="flex-grow text-2xl font-semibold">
+                Number of Guests
+              </h2>
+              <UsersIcon className="h-5 justify-right" />
+              <input
+                value={noOfGuests}
+                onChange={(e) => setNoOfGuests(e.target.value)}
+                min={1}
+                type="number"
+                className="w-12 pl-2 text-lg text-red-400 outline-none"
+              />
+            </div>
+            <div className="flex w-screen md:w-[580px]">
+              <button
+                className="w-1/2 text-gray-500 md:flex-grow"
+                onClick={resetInput}
+              >
+                Cancel
+              </button>
+              <button
+                className="w-1/2 text-red-400 md:flex-grow"
+                onClick={search}
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        )}

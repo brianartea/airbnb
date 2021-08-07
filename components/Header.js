@@ -80,43 +80,45 @@ function Header({ placeholder }) {
           <UserCircleIcon className="cursor-pointer h-6" />
         </div>
       </div>
-      {searchInput && (
-        <div className="box-s border-2 border-gray-200 flex flex-col col-span-3 mx-auto mt-5 shadow-lg rounded-sm z-60">
-          <DateRangePicker
-            ranges={[selectionRange]}
-            minDate={new Date()}
-            rangeColors={["#fd5861"]}
-            onChange={handleSelect}
-          />
-          <div className="flex items-center border-b mb-4">
-            <h2 className="text-xl pl-4 flex-grow font-semibold">
-              Number of Guests
-            </h2>
-            <UsersIcon className="h-5" />
-            <input
-              value={noOfGuests}
-              onChange={(e) => setNoOfGuests(e.target.value)}
-              type="number"
-              min={1}
-              className="w-12 pl-2 text-lg outline-none text-red-400"
+      <div className="absolute w-screen md:w-[580px] left-1 top-20 md:left-[20%] lg:left-[30%]   z-50">
+        {searchInput && (
+          <div className="z-50 flex flex-col p-5 mt-5 bg-white shadow-md md:col-span-4 w-max rounded-xl">
+            <DateRangePicker
+              ranges={[selectionRange]}
+              minDate={new Date()}
+              rangeColors={["#FD5B61"]}
+              onChange={handleSelect}
             />
+            <div className="flex w-screen md:w-[580px] items-center border-b mb-4 top-auto right-auto bottom-auto left-auto bg-white">
+              <h2 className="flex-grow text-2xl font-semibold pl-3">
+                Number of Guests
+              </h2>
+              <UsersIcon className="h-5 justify-right" />
+              <input
+                value={noOfGuests}
+                onChange={(e) => setNoOfGuests(e.target.value)}
+                min={1}
+                type="number"
+                className="w-12 pl-2 text-lg text-red-400 outline-none"
+              />
+            </div>
+            <div className="flex w-screen md:w-[580px]">
+              <button
+                className="w-1/2 text-gray-500 md:flex-grow p-4 font-bold hover:bg-gray-100 hover:rounded-xl"
+                onClick={resetInput}
+              >
+                Cancel
+              </button>
+              <button
+                className="w-1/2 text-red-400 md:flex-grow p-4 font-bold hover:bg-gray-100 hover:rounded-xl"
+                onClick={search}
+              >
+                Search
+              </button>
+            </div>
           </div>
-          <div className="flex">
-            <button
-              onClick={resetInput}
-              className="flex-grow text-gray-500 mb-4 hover:text-green-500 font-bold"
-            >
-              Cancel
-            </button>
-            <button
-              onClick={search}
-              className="flex-grow text-red-400 mb-4 hover:text-green-500 font-bold"
-            >
-              Search
-            </button>
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 }

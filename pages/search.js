@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
 import Copyright from "../components/Copyright";
+import Map from "../components/Map";
 
 function Search({ searchResults }) {
   const router = useRouter();
@@ -47,6 +48,10 @@ function Search({ searchResults }) {
               )
             )}
           </div>
+        </section>
+        <section className="">
+          {/* hidden xl:inline-flex */}
+          <Map />
         </section>
       </main>
       <Footer />
