@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Copyright from "../components/Copyright";
 
 function Search({ searchResults }) {
   const router = useRouter();
@@ -49,6 +50,7 @@ function Search({ searchResults }) {
         </section>
       </main>
       <Footer />
+      <Copyright />
     </div>
   );
 }
