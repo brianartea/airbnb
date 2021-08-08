@@ -37,18 +37,19 @@ function Map({ searchResults }) {
             offsetLeft={-20}
             offsetTop={-10}
           >
-            <p
-              roll="img"
-              onClick={() => setSelectedLocation(result)}
-              className="cursor-pointer text-2xl animate-bounce"
-              aria-label="push-pin"
-            >
-              📌
-            </p>
+            <img
+              onClick={() => {
+                setSelectedLocation(result);
+              }}
+              src="https://expertdesign.cc/papa-react-images/274px-Google_Maps_pin.svg.png"
+              className={"h-8 cursor-pointer"}
+              alt=""
+            />
           </Marker>
           {/* Popup if marker is clicked on */}
           {selectedLocation.long === result.long ? (
             <Popup
+              className=""
               onClose={() => setSelectedLocation({})}
               closeOnClick={true}
               latitude={result.lat}
